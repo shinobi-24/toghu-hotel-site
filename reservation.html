@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réservation — Toghu Hôtel &amp; Spa, Kribi</title>
+<meta name="description" content="Réservez votre séjour au Toghu Hôtel & Spa à Kribi en trois étapes. Annulation gratuite jusqu'à 72h avant l'arrivée.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1A1614">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Karla:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="reservation">
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<!-- ===================== NAVIGATION ALLEGEE ===================== -->
+<nav class="nav navslim" aria-label="Navigation du tunnel de réservation">
+  <div class="shell">
+    <div class="nav__bar">
+      <div class="nav__side">
+        <a class="navslim__back" href="chambres.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M20 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
+          Retour aux chambres
+        </a>
+      </div>
+
+      <div class="nav__brand">
+        <a class="nav__mono" href="index.html" aria-label="Toghu Hôtel et Spa, accueil">T</a>
+        <span class="nav__wordmark"><b>Toghu</b></span>
+      </div>
+
+      <div class="nav__side nav__side--end">
+        <div class="nav__lang" role="group" aria-label="Langue du site">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <i aria-hidden="true">/</i>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <p class="navslim__secure">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+          <span>Paiement sécurisé</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="contenu">
+
+  <!-- ===================== ETAPES ===================== -->
+  <div class="shell">
+    <ol class="steps" aria-label="Étapes de la réservation">
+      <li class="step" data-step="1" data-state="current">
+        <span class="step__dot" aria-hidden="true">1</span>
+        <span class="step__text"><small>Étape 1</small><span>Dates et chambre</span></span>
+      </li>
+      <li class="step__line" data-done="false" role="presentation"></li>
+      <li class="step" data-step="2" data-state="todo">
+        <span class="step__dot" aria-hidden="true">2</span>
+        <span class="step__text"><small>Étape 2</small><span>Vos informations</span></span>
+      </li>
+      <li class="step__line" data-done="false" role="presentation"></li>
+      <li class="step" data-step="3" data-state="todo">
+        <span class="step__dot" aria-hidden="true">3</span>
+        <span class="step__text"><small>Étape 3</small><span>Paiement</span></span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="shell">
+    <div class="booking">
+
+      <!-- ===================== FORMULAIRE ===================== -->
+      <form>
+        <h1 class="h2" id="b-titre" style="margin-bottom:26px">Dates et chambre</h1>
+
+        <!-- ---------- Étape 1 ---------- -->
+        <div data-panel="1" style="display:flex;flex-direction:column;gap:24px">
+          <div class="card">
+            <p class="card__title">Votre séjour</p>
+
+            <div class="field">
+              <label for="b-chambre">Chambre</label>
+              <select id="b-chambre"></select>
+            </div>
+
+            <div class="grid2">
+              <div class="field">
+                <label for="b-arrivee">Date d'arrivée</label>
+                <input type="date" id="b-arrivee" required>
+              </div>
+              <div class="field">
+                <label for="b-depart">Date de départ</label>
+                <input type="date" id="b-depart" required>
+              </div>
+              <div class="field">
+                <label for="b-adultes">Adultes</label>
+                <select id="b-adultes">
+                  <option value="1">1 adulte</option>
+                  <option value="2">2 adultes</option>
+                  <option value="3">3 adultes</option>
+                  <option value="4">4 adultes</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="b-enfants">Enfants</label>
+                <select id="b-enfants">
+                  <option value="0">Aucun</option>
+                  <option value="1">1 enfant</option>
+                  <option value="2">2 enfants</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="field__error" id="b-alerte" role="alert" hidden></p>
+          </div>
+
+          <div class="formfoot">
+            <p>Annulation gratuite, aucun paiement à cette étape.</p>
+            <button type="button" class="btn btn--primary" id="b-suite-1" data-goto="2">
+              Continuer
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ---------- Étape 2 ---------- -->
+        <div data-panel="2" hidden style="display:flex;flex-direction:column;gap:24px">
+          <div class="card">
+            <div class="grid2">
+              <div class="field">
+                <label for="c-prenom">Prénom</label>
+                <input type="text" id="c-prenom" autocomplete="given-name" placeholder="Marlyse" required>
+                <p class="field__error"></p>
+              </div>
+              <div class="field">
+                <label for="c-nom">Nom</label>
+                <input type="text" id="c-nom" autocomplete="family-name" placeholder="Essomba" required>
+                <p class="field__error"></p>
+              </div>
+              <div class="field">
+                <label for="c-email">Adresse email</label>
+                <input type="email" id="c-email" autocomplete="email" placeholder="m.essomba@exemple.cm" required>
+                <p class="field__error"></p>
+              </div>
+              <div class="field field--phone">
+                <label for="c-tel">Téléphone</label>
+                <div class="field__row">
+                  <span>+237</span>
+                  <input type="tel" id="c-tel" autocomplete="tel" placeholder="6 55 12 34 56" required>
+                </div>
+                <p class="field__error"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c-pays">Pays de résidence</label>
+              <select id="c-pays">
+                <option selected>Cameroun</option>
+                <option>France</option>
+                <option>Sénégal</option>
+                <option>Côte d'Ivoire</option>
+                <option>Gabon</option>
+                <option>Autre</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="c-demandes">Demandes particulières</label>
+              <textarea id="c-demandes" placeholder="Lit bébé, étage élevé, arrivée tardive..."></textarea>
+            </div>
+          </div>
+
+          <div class="card">
+            <p class="card__title">Heure d'arrivée prévue</p>
+            <div class="choices">
+              <button type="button" class="choice" data-heure="Avant 16h" aria-pressed="false">Avant 16h</button>
+              <button type="button" class="choice" data-heure="16h - 20h" aria-pressed="true">16h - 20h</button>
+              <button type="button" class="choice" data-heure="Après 20h" aria-pressed="false">Après 20h</button>
+              <button type="button" class="choice" data-heure="Je ne sais pas encore" aria-pressed="false">Je ne sais pas encore</button>
+            </div>
+
+            <label class="check">
+              <input type="checkbox" id="c-navette">
+              <span class="check__box" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#F7F2EA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              </span>
+              <span>Je souhaite la navette depuis l'aéroport de Douala (25 000 FCFA par trajet, à régler sur place).</span>
+            </label>
+          </div>
+
+          <div class="formfoot">
+            <button type="button" class="btn btn--outline" data-goto="1">Retour</button>
+            <button type="button" class="btn btn--primary" data-goto="3">
+              Continuer vers le paiement
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ---------- Étape 3 ---------- -->
+        <div data-panel="3" hidden style="display:flex;flex-direction:column;gap:24px">
+          <div class="card">
+            <p class="card__title">Moyen de paiement</p>
+            <div class="choices">
+              <button type="button" class="choice" data-paiement="orange" aria-pressed="true">Orange Money</button>
+              <button type="button" class="choice" data-paiement="mtn" aria-pressed="false">MTN MoMo</button>
+              <button type="button" class="choice" data-paiement="visa" aria-pressed="false">Carte bancaire</button>
+              <button type="button" class="choice" data-paiement="place" aria-pressed="false">Régler sur place</button>
+            </div>
+
+            <div id="bloc-momo" class="field">
+              <label for="c-momo">Numéro mobile money</label>
+              <input type="tel" id="c-momo" placeholder="6 99 00 00 00">
+              <p class="field__error">Vous recevrez une demande de validation sur ce numéro.</p>
+            </div>
+
+            <div id="bloc-carte" hidden>
+              <div class="field">
+                <label for="c-carte">Numéro de carte</label>
+                <input type="text" id="c-carte" inputmode="numeric" placeholder="0000 0000 0000 0000" autocomplete="cc-number">
+              </div>
+              <div class="grid2" style="margin-top:20px">
+                <div class="field">
+                  <label for="c-exp">Expiration</label>
+                  <input type="text" id="c-exp" placeholder="MM / AA" autocomplete="cc-exp">
+                </div>
+                <div class="field">
+                  <label for="c-cvc">Cryptogramme</label>
+                  <input type="text" id="c-cvc" inputmode="numeric" placeholder="123" autocomplete="cc-csc">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <label class="check">
+              <input type="checkbox" id="c-cgv">
+              <span class="check__box" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#F7F2EA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              </span>
+              <span>J'accepte les conditions de réservation et la politique d'annulation.</span>
+            </label>
+          </div>
+
+          <div class="formfoot">
+            <button type="button" class="btn btn--outline" data-goto="2">Retour</button>
+            <button type="submit" class="btn btn--primary" id="b-payer">
+              Confirmer la réservation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+            </button>
+          </div>
+
+          <p style="font-size:12.5px;color:var(--gris);text-align:center">
+            Maquette de démonstration. Aucun paiement réel n'est traité, aucune donnée n'est transmise.
+          </p>
+        </div>
+      </form>
+
+      <!-- ===================== RECAPITULATIF ===================== -->
+      <aside class="recap" aria-labelledby="t-recap">
+        <div class="recap__media">
+          <div class="ph ph--bamoun" id="rc-photo"><span class="ph__label">Emplacement photo</span></div>
+        </div>
+        <div class="recap__body">
+          <h2 class="recap__title" id="t-recap">Votre séjour</h2>
+          <p class="recap__room" id="rc-nom">Suite Bamoun</p>
+          <p class="recap__desc" id="rc-desc">55 m², vue océan, 3 personnes</p>
+
+          <dl class="recap__lines">
+            <div class="recap__line"><dt>Arrivée</dt><dd id="rc-arrivee">—</dd></div>
+            <div class="recap__line"><dt>Départ</dt><dd id="rc-depart">—</dd></div>
+            <div class="recap__line"><dt>Voyageurs</dt><dd id="rc-voyageurs">—</dd></div>
+          </dl>
+
+          <dl class="recap__lines">
+            <div class="recap__line"><dt id="rc-lignelabel">—</dt><dd id="rc-soustotal">—</dd></div>
+            <div class="recap__line"><dt>Petit-déjeuner</dt><dd>Inclus</dd></div>
+            <div class="recap__line"><dt>Taxe de séjour</dt><dd id="rc-taxe">—</dd></div>
+            <div class="recap__line" id="rc-navette-ligne" hidden><dt>Navette Douala</dt><dd id="rc-navette">—</dd></div>
+          </dl>
+
+          <div class="recap__total">
+            <div><b>Total</b><small>Taxes comprises</small></div>
+            <strong id="rc-total">—</strong>
+          </div>
+
+          <p class="recap__note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+            <span id="rc-annulation">Annulation gratuite jusqu'à 72h avant l'arrivée.</span>
+          </p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__legal" style="margin-top:0;border-top:0;padding-top:0">
+      <p>© <span data-annee>2026</span> Toghu Hôtel &amp; Spa. Établissement fictif, maquette de démonstration.</p>
+      <nav aria-label="Mentions légales">
+        <a href="tel:+237699000000">+237 6 99 00 00 00</a>
+        <a href="https://wa.me/237699000000">WhatsApp</a>
+        <a href="#">Conditions de réservation</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

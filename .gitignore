@@ -1,0 +1,19 @@
+# Secrets, jamais dans un dépôt
+.env
+.env.local
+*.key
+*.pem
+credentials.json
+
+# Systèmes d'exploitation
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Éditeurs
+.vs/
+.vscode/
+*.code-workspace
+
+# Netlify
+.netlify/

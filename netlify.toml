@@ -1,0 +1,43 @@
+# Configuration Netlify
+# Site statique : aucune compilation, on publie le dossier tel quel.
+
+[build]
+  publish = "."
+  command = ""
+
+# En-têtes de sécurité, appliqués à toutes les pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Les feuilles de style et scripts peuvent être mis en cache longtemps
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Les pages HTML doivent toujours être revalidées
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Adresses sans extension : /chambres renvoie vers /chambres.html
+[[redirects]]
+  from = "/chambres"
+  to = "/chambres.html"
+  status = 200
+
+[[redirects]]
+  from = "/reservation"
+  to = "/reservation.html"
+  status = 200
+
+[[redirects]]
+  from = "/confirmation"
+  to = "/confirmation.html"
+  status = 200
