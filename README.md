@@ -4,7 +4,10 @@ Site vitrine et tunnel de réservation pour un hôtel 4 étoiles, en HTML, CSS e
 
 **Projet de démonstration.** L'établissement est fictif : le Toghu Hôtel & Spa n'existe pas. Le projet sert à montrer une chaîne de travail complète, du brief au code déployé.
 
-🔗 **Démo en ligne :** à compléter après le déploiement
+🔗 **Démo en ligne :** https://toghu-hotel-site.vercel.app
+
+Le même dépôt est déployé en parallèle sur deux hébergeurs, pour comparaison :
+[Vercel](https://toghu-hotel-site.vercel.app) et [Netlify](https://silver-druid-fa6f0a.netlify.app).
 
 ---
 
@@ -55,7 +58,8 @@ index.html, chambres.html, reservation.html, confirmation.html
 assets/css/style.css     toute la mise en forme, mobile d'abord
 assets/js/data.js        les données : chambres, tarifs, coordonnées
 assets/js/main.js        les comportements : filtres, calculs, validation
-netlify.toml             en-têtes de sécurité, cache, URL sans extension
+netlify.toml             configuration Netlify : en-têtes, cache, URL sans extension
+vercel.json              même configuration, pour Vercel
 ```
 
 La séparation données / comportements / présentation est volontaire. Changer d'hôtel revient à réécrire `data.js` et les cinq couleurs en haut de `style.css`.
@@ -71,7 +75,7 @@ La séparation données / comportements / présentation est volontaire. Changer 
 Clonez le dépôt et ouvrez `index.html` dans un navigateur. C'est tout.
 
 ```bash
-git clone https://github.com/<compte>/toghu-hotel-site.git
+git clone https://github.com/shinobi-24/toghu-hotel-site.git
 cd toghu-hotel-site
 ```
 
